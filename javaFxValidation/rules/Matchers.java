@@ -1,11 +1,17 @@
 package javaFxValidation.rules;
 
-import static javaFxValidation.Str.*;
+import static javaFxValidation.Str.isAlpha;
+import static javaFxValidation.Str.isAlphaDash;
+import static javaFxValidation.Str.isAlphaNumeric;
+import static javaFxValidation.Str.isBoolean;
+import static javaFxValidation.Str.isDate;
+import static javaFxValidation.Str.isEmail;
+import static javaFxValidation.Str.isEmpty;
+import static javaFxValidation.Str.isNumeric;
 
 import java.util.ArrayList;
 
 import javaFxValidation.Regex;
-import javaFxValidation.ValidationException;
 
 public class Matchers {
 
@@ -53,7 +59,6 @@ public class Matchers {
 	
 	/**
 	 * Parameterized rules
-	 * @throws ValidationException 
 	 */
 	public static boolean digits(String value, ArrayList<String> ruleParameters) {
 		

@@ -113,6 +113,22 @@ public class Validator {
 		
 		return errorMessages;
 	}
+	
+	/**
+	 * Retrieve all error messages from validator for failed rules as a string.
+	 * @return String
+	 */
+	public String getErrorMessagesAsString() {
+		
+		StringBuilder sb = new StringBuilder();
+		
+		for (Field field : failedFields)
+			for (Rule rule : field.getFailedRules()) {
+				sb.append(rule.getMessage() + "\n");
+			}
+		
+		return sb.toString();
+	}
 
 	/**
 	 * Retrieve all error messages from validator for a specific field.
